@@ -1,16 +1,9 @@
 package io.caster.rxexamples;
 
-import android.content.Context;
-import android.content.DialogInterface;
 import android.os.AsyncTask;
-import android.support.v7.app.AlertDialog;
-import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
-import android.text.SpannableString;
-import android.text.method.LinkMovementMethod;
-import android.text.util.Linkify;
+import android.support.v7.app.AppCompatActivity;
 import android.util.Log;
-import android.widget.TextView;
 
 import com.google.gson.Gson;
 import com.squareup.okhttp.OkHttpClient;
@@ -47,7 +40,7 @@ public class MainActivity extends AppCompatActivity {
                 try {
                     Response response = client.newCall(request).execute();
 
-                    if(response.isSuccessful()) {
+                    if (response.isSuccessful()) {
                         Gist gist = new Gson().fromJson(response.body().charStream(), Gist.class);
                         return gist;
                     }
@@ -74,5 +67,5 @@ public class MainActivity extends AppCompatActivity {
         }.execute();
 
     }
-    
+
 }
