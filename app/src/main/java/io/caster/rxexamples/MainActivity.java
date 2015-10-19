@@ -3,7 +3,7 @@ package io.caster.rxexamples;
 import android.os.AsyncTask;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
-import android.util.Log;
+import android.widget.TextView;
 
 import com.google.gson.Gson;
 import com.squareup.okhttp.OkHttpClient;
@@ -57,12 +57,18 @@ public class MainActivity extends AppCompatActivity {
             protected void onPostExecute(Gist gist) {
                 super.onPostExecute(gist);
 
+                StringBuilder sb = new StringBuilder();
                 // Output
                 for (Map.Entry<String, GistFile> entry : gist.files.entrySet()) {
-                    Log.d(TAG, entry.getKey());
-                    Log.d(TAG, "Length of file: " + entry.getValue().content.length());
+                    sb.append(entry.getKey());
+                    sb.append(" - ");
+                    sb.append("Length of file ");
+                    sb.append(entry.getValue().content.length());
+                    sb.append("\n");
                 }
 
+                TextView text = (TextView) findViewById(R.id.main_message);
+                text.setText(sb.toString());
             }
         }.execute();
 
