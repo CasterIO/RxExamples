@@ -74,18 +74,5 @@ public class MainActivity extends AppCompatActivity {
         }.execute();
 
     }
-
-
-    public static void showCustomDialog(String title, String message, Context activity) {
-        AlertDialog.Builder alertDialog = new AlertDialog.Builder(activity);
-        alertDialog.setTitle(title);
-        alertDialog.setMessage(message);
-        alertDialog.setNegativeButton(activity.getString(android.R.string.ok), new DialogInterface.OnClickListener() {
-            public void onClick(DialogInterface dialog, int which) {
-                dialog.cancel();
-            }
-        });
-        alertDialog.show();
-    }
-
+    
 }
