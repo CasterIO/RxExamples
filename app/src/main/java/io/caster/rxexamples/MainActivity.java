@@ -76,6 +76,7 @@ public class MainActivity extends AppCompatActivity {
 
     @Nullable
     private Gist getGist() throws IOException {
+
         OkHttpClient client = new OkHttpClient();
 
         // Go get this Gist: https://gist.github.com/donnfelker/db72a05cc03ef523ee74
@@ -103,7 +104,7 @@ public class MainActivity extends AppCompatActivity {
                 try {
                     return Observable.just(getGist());
                 } catch (IOException e) {
-                    return null;
+                    return Observable.error(e);
                 }
             }
         });
