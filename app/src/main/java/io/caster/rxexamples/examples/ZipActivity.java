@@ -24,46 +24,7 @@ public class ZipActivity extends AppCompatActivity {
         setContentView(R.layout.activity_zip);
 
 
-        Observable.zip(getCustomer(), getOrder(), new Func2<Customer, Order, CustomerOrderInfo>() {
-            @Override
-            public CustomerOrderInfo call(Customer customer, Order order) {
-                return new CustomerOrderInfo(customer.getId(), order.getId());
-            }
-        }).subscribe(new Subscriber<CustomerOrderInfo>() {
-            @Override
-            public void onCompleted() {
 
-            }
-
-            @Override
-            public void onError(Throwable e) {
-
-            }
-
-            @Override
-            public void onNext(CustomerOrderInfo customerOrderInfo) {
-                Log.d("RX", "Got the customer info");
-            }
-        });
     }
 
-
-    public Observable<Customer> getCustomer() {
-        return Observable.defer(new Func0<Observable<Customer>>() {
-            @Override
-            public Observable<Customer> call() {
-                return Observable.just(new Customer("Foo Bar", UUID.randomUUID().toString()));
-            }
-        });
-    }
-
-
-    public Observable<Order> getOrder() {
-        return Observable.defer(new Func0<Observable<Order>>() {
-            @Override
-            public Observable<Order> call() {
-                return Observable.just(new Order(UUID.randomUUID().toString(), 10000));
-            }
-        });
-    }
 }
