@@ -16,8 +16,10 @@ import io.caster.rxexamples.models.CustomerOrderInfo;
 import io.caster.rxexamples.models.Order;
 import rx.Observable;
 import rx.Subscriber;
+import rx.android.schedulers.AndroidSchedulers;
 import rx.functions.Func0;
 import rx.functions.Func2;
+import rx.schedulers.Schedulers;
 
 public class ZipFragment extends Fragment {
 
@@ -41,22 +43,25 @@ public class ZipFragment extends Fragment {
             public CustomerOrderInfo call(Customer customer, Order order) {
                 return new CustomerOrderInfo(customer.getId(), order.getId());
             }
-        }).subscribe(new Subscriber<CustomerOrderInfo>() {
-            @Override
-            public void onCompleted() {
+        })
+                .subscribeOn(Schedulers.io())
+                .observeOn(AndroidSchedulers.mainThread())
+                .subscribe(new Subscriber<CustomerOrderInfo>() {
+                    @Override
+                    public void onCompleted() {
 
-            }
+                    }
 
-            @Override
-            public void onError(Throwable e) {
+                    @Override
+                    public void onError(Throwable e) {
 
-            }
+                    }
 
-            @Override
-            public void onNext(CustomerOrderInfo customerOrderInfo) {
-                Log.d("RX", "Got the customer info");
-            }
-        });
+                    @Override
+                    public void onNext(CustomerOrderInfo customerOrderInfo) {
+                        Log.d("RX", "Got the customer info");
+                    }
+                });
 
     }
 

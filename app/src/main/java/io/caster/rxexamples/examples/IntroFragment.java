@@ -43,7 +43,7 @@ public class IntroFragment extends Fragment {
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
         // Just some view
-        return new LinearLayout(getActivity());
+        return inflater.inflate(R.layout.fragment_intro, container, false);
     }
 
     @Override

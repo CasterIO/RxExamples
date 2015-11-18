@@ -1,3 +1,4 @@
 <resources>
     <string name="app_name">RxExamples</string>
+    <string name="amb_execute_test">Execute Test</string>
 </resources>
