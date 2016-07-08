@@ -13,7 +13,7 @@ import android.widget.TextView;
 import java.util.Random;
 import java.util.UUID;
 
-import butterknife.Bind;
+import butterknife.BindView;
 import butterknife.ButterKnife;
 import butterknife.OnClick;
 import io.caster.rxexamples.R;
@@ -30,7 +30,7 @@ public class AmbFragment extends Fragment {
     private Thread firstThread;
     private Thread secondThread;
 
-    @Bind(R.id.amb_results) protected TextView results;
+    @BindView(R.id.amb_results) protected TextView results;
 
     public static AmbFragment newInstance() {
         return new AmbFragment();
