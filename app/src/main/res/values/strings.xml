@@ -1,4 +1,8 @@
 <resources>
     <string name="app_name">RxExamples</string>
     <string name="amb_execute_test">Execute Test</string>
+    <string name="amb_example">Observable.amb() Example</string>
+    <string name="zip_example">Observable.zip() Example</string>
+    <string name="intro_example">Intro Example</string>
+    <string name="subjects">Subjects</string>
 </resources>
