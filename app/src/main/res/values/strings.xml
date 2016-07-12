@@ -5,4 +5,8 @@
     <string name="zip_example">Observable.zip() Example</string>
     <string name="intro_example">Intro Example</string>
     <string name="subjects">Subjects</string>
+    <string name="replay_subject_instructions">Attach a debugger to each method in the fragment, then click each button to observe the various replay subject behavior.</string>
+    <string name="replay_subject_default">Default Replay Subject</string>
+    <string name="replay_subject_example">Replay Subject Example</string>
+    <string name="replay_subject_create_sized">Sized Replay Subject</string>
 </resources>

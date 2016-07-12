@@ -11,6 +11,7 @@ import butterknife.ButterKnife;
 import butterknife.OnClick;
 import io.caster.rxexamples.examples.AmbFragment;
 import io.caster.rxexamples.examples.IntroFragment;
+import io.caster.rxexamples.examples.ReplaySubjectFragment;
 import io.caster.rxexamples.examples.ZipFragment;
 
 public class MainFragment extends Fragment {
@@ -18,7 +19,6 @@ public class MainFragment extends Fragment {
     public static Fragment newInstance() {
         return new MainFragment();
     }
-
 
     @Nullable
     @Override
@@ -46,9 +46,13 @@ public class MainFragment extends Fragment {
         changeFragment(ZipFragment.newInstance());
     }
 
-
     @OnClick(R.id.amb_fragment)
     public void onAmbFragmentClick() {
         changeFragment(AmbFragment.newInstance());
+    }
+
+    @OnClick(R.id.replay_subject_fragment)
+    public void onReplaySubjectFragmentClick() {
+        changeFragment(ReplaySubjectFragment.newInstance());
     }
 }

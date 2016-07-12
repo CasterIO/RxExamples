@@ -33,6 +33,13 @@
             android:text="@string/subjects"
             android:textStyle="bold"/>
 
+        <Button
+            android:id="@+id/replay_subject_fragment"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/replay_subject_example"/>
+
+
     </LinearLayout>
 
 </ScrollView>
