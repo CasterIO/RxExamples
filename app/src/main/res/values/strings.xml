@@ -9,4 +9,5 @@
     <string name="replay_subject_default">Default Replay Subject</string>
     <string name="replay_subject_example">Replay Subject Example</string>
     <string name="replay_subject_create_sized">Sized Replay Subject</string>
+    <string name="replay_subject_create_timed">Timed Replay Subject</string>
 </resources>
