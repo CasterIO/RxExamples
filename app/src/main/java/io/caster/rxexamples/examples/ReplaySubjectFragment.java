@@ -11,6 +11,7 @@ import java.util.concurrent.TimeUnit;
 
 import butterknife.ButterKnife;
 import butterknife.OnClick;
+import butterknife.Unbinder;
 import io.caster.rxexamples.R;
 import io.caster.rxexamples.models.Stock;
 import rx.Subscriber;
@@ -25,6 +26,7 @@ public class ReplaySubjectFragment extends Fragment {
     private static final String GOOG = "GOOG";
 
     private CompositeSubscription compositeSubscription;
+    private Unbinder unbinder;
 
     public static ReplaySubjectFragment newInstance() {
         return new ReplaySubjectFragment();
@@ -34,8 +36,14 @@ public class ReplaySubjectFragment extends Fragment {
     @Override
     public View onCreateView(LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
         View v = inflater.inflate(R.layout.fragment_replay_subject, container, false);
-        ButterKnife.bind(this, v);
+        unbinder = ButterKnife.bind(this, v);
         return v;
+    }
+
+    @Override
+    public void onDestroyView() {
+        super.onDestroyView();
+        unbinder.unbind();
     }
 
     @Override

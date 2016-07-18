@@ -39,6 +39,11 @@
             android:layout_height="wrap_content"
             android:text="@string/replay_subject_example"/>
 
+        <Button
+            android:id="@+id/async_subject_fragment"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/async_subject_example"/>
 
     </LinearLayout>
 

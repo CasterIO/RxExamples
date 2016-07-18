@@ -10,6 +10,7 @@ import android.view.ViewGroup;
 import butterknife.ButterKnife;
 import butterknife.OnClick;
 import io.caster.rxexamples.examples.AmbFragment;
+import io.caster.rxexamples.examples.AsyncSubjectFragment;
 import io.caster.rxexamples.examples.IntroFragment;
 import io.caster.rxexamples.examples.ReplaySubjectFragment;
 import io.caster.rxexamples.examples.ZipFragment;
@@ -54,5 +55,10 @@ public class MainFragment extends Fragment {
     @OnClick(R.id.replay_subject_fragment)
     public void onReplaySubjectFragmentClick() {
         changeFragment(ReplaySubjectFragment.newInstance());
+    }
+
+    @OnClick(R.id.async_subject_fragment)
+    public void onAsyncSubjectClick() {
+        changeFragment(AsyncSubjectFragment.newInstance());
     }
 }
