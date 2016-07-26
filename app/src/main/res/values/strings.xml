@@ -13,4 +13,7 @@
     <string name="async_subject_example">Async Subject Example</string>
     <string name="async_subject_test">Test Async Subject</string>
     <string name="async_subject_test_error">Test with Error</string>
+    <string name="publish_subject_example">Publish Subject Example</string>
+    <string name="publish_subject_test">Test Publish Subject</string>
+    <string name="public_subject_test_error">Publish Subject with Error</string>
 </resources>

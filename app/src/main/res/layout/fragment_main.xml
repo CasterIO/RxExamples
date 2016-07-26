@@ -45,6 +45,13 @@
             android:layout_height="wrap_content"
             android:text="@string/async_subject_example"/>
 
+        <Button
+            android:id="@+id/publish_subject_fragment"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/publish_subject_example"/>
+
+
     </LinearLayout>
 
 </ScrollView>
