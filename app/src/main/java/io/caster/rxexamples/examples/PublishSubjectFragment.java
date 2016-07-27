@@ -86,7 +86,7 @@ public class PublishSubjectFragment extends Fragment {
     }
 
     /**
-     * Simple subscriber for the default replay subject.
+     * Simple subscriber for the default subject.
      */
     private Subscriber<Stock> getDefaultSubscriber() {
         return new Subscriber<Stock>() {
@@ -108,7 +108,7 @@ public class PublishSubjectFragment extends Fragment {
     }
 
     /**
-     * Simple subscriber that is used to subscribe to a replay subject after it has completed.
+     * Simple subscriber that is used to subscribe to a subject after it has completed.
      */
     private Subscriber<Stock> getTardySubscriber() {
         return new Subscriber<Stock>() {
