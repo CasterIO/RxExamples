@@ -51,6 +51,11 @@
             android:layout_height="wrap_content"
             android:text="@string/publish_subject_example"/>
 
+        <Button
+            android:id="@+id/behavior_subject_fragment"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/behavior_subject_example"/>
 
     </LinearLayout>
 

@@ -16,4 +16,8 @@
     <string name="publish_subject_example">Publish Subject Example</string>
     <string name="publish_subject_test">Test Publish Subject</string>
     <string name="public_subject_test_error">Publish Subject with Error</string>
+    <string name="behavior_subject_test">Test Behavior Subject</string>
+    <string name="behavior_subject_test_error">Behavior Subject with Error</string>
+    <string name="behavior_subject_example">Behavior Subject Example</string>
+    <string name="behavior_subject_existing_item">Creation Existing Item</string>
 </resources>

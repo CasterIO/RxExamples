@@ -11,6 +11,7 @@ import butterknife.ButterKnife;
 import butterknife.OnClick;
 import io.caster.rxexamples.examples.AmbFragment;
 import io.caster.rxexamples.examples.AsyncSubjectFragment;
+import io.caster.rxexamples.examples.BehaviorSubjectFragment;
 import io.caster.rxexamples.examples.IntroFragment;
 import io.caster.rxexamples.examples.PublishSubjectFragment;
 import io.caster.rxexamples.examples.ReplaySubjectFragment;
@@ -66,5 +67,10 @@ public class MainFragment extends Fragment {
     @OnClick(R.id.publish_subject_fragment)
     public void onPublishSubjectClick() {
         changeFragment(PublishSubjectFragment.newInstance());
+    }
+
+    @OnClick(R.id.behavior_subject_fragment)
+    public void onBehaviorSubjectClick() {
+        changeFragment(BehaviorSubjectFragment.newInstance());
     }
 }
