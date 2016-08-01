@@ -49,12 +49,6 @@ public class BehaviorSubjectFragment extends Fragment {
         unsubscribe();
         createSubscription();
 
-        // ALso show that you can create one with an existing value
-//        BehaviorSubject<Stock> behaviorSubject = BehaviorSubject.create();
-        // Be sure to cover:
-        // behaviorSubject.getValue()
-        // behaviorSubject.getValues() getValues(...)
-
         unsubscribe();
         createSubscription();
 
