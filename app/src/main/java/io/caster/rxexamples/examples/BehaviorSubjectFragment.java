@@ -49,9 +49,6 @@ public class BehaviorSubjectFragment extends Fragment {
         unsubscribe();
         createSubscription();
 
-        unsubscribe();
-        createSubscription();
-
         BehaviorSubject<Stock> behaviorSubject = BehaviorSubject.create();
 
         Subscription subscription = behaviorSubject.subscribe(getDefaultSubscriber());
