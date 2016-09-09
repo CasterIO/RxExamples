@@ -18,6 +18,11 @@ android {
             proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
         }
     }
+    // Allow basic build to proceed instead of error-ing due to InvalidPackage warning from Okio.
+    // Related issue: https://github.com/square/okio/issues/58
+    lintOptions {
+        disable 'InvalidPackage'
+   }
 }
 
 dependencies {
