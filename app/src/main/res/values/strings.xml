@@ -20,4 +20,5 @@
     <string name="behavior_subject_test_error">Behavior Subject with Error</string>
     <string name="behavior_subject_example">Behavior Subject Example</string>
     <string name="behavior_subject_existing_item">Creation Existing Item</string>
+    <string name="repeat_example">Observable.repeat() Example</string>
 </resources>

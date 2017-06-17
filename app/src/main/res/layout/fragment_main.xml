@@ -27,6 +27,12 @@
             android:layout_height="wrap_content"
             android:text="@string/zip_example"/>
 
+        <Button
+            android:id="@+id/repeat_fragment"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/repeat_example"/>
+
         <TextView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
