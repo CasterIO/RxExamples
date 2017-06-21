@@ -12,6 +12,9 @@ import io.reactivex.Observable
 import io.reactivex.disposables.Disposable
 import timber.log.Timber
 
+/**
+ * This example is in RxJava 2
+ */
 class RepeatFragment : Fragment() {
 
     lateinit var disposable: Disposable
@@ -45,7 +48,6 @@ class RepeatFragment : Fragment() {
                             Timber.i("onComplete")
                             content.text = "${content.text}\nonComplete"
                         })
-
     }
 
     override fun onDestroy() {
