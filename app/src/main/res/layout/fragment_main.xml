@@ -16,6 +16,12 @@
             android:text="@string/intro_example"/>
 
         <Button
+            android:id="@+id/just_fragment"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/just_example"/>
+
+        <Button
             android:id="@+id/amb_fragment"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"

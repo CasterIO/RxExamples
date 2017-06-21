@@ -12,6 +12,7 @@ import butterknife.OnClick;
 import io.caster.rxexamples.examples.AmbFragment;
 import io.caster.rxexamples.examples.AsyncSubjectFragment;
 import io.caster.rxexamples.examples.BehaviorSubjectFragment;
+import io.caster.rxexamples.examples.JustFragment;
 import io.caster.rxexamples.examples.RepeatFragment;
 import io.caster.rxexamples.examples.IntroFragment;
 import io.caster.rxexamples.examples.PublishSubjectFragment;
@@ -38,6 +39,11 @@ public class MainFragment extends Fragment {
                 .replace(R.id.root_container, fragment)
                 .addToBackStack(null)
                 .commit();
+    }
+
+    @OnClick(R.id.just_fragment)
+    public void onJustFragmentClick() {
+        changeFragment(new JustFragment());
     }
 
     @OnClick(R.id.intro_fragment)
