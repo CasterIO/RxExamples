@@ -9,6 +9,7 @@ import android.widget.TextView
 import io.caster.rxexamples.R
 import io.reactivex.Observable
 import io.reactivex.disposables.CompositeDisposable
+import io.reactivex.observers.DisposableObserver
 import timber.log.Timber
 
 
@@ -60,10 +61,10 @@ class JustFragment : Fragment() {
         compositeDisposable.add(disposable2)
 
         // With a complex object
-        val fooSquare = JustAnotherObject("Foo", MyFavoriteObject("Red", "Square"))
-        val barCircle = JustAnotherObject("Bar", MyFavoriteObject("Orange", "Circle"))
-        val fizRectangle = JustAnotherObject("Fiz", MyFavoriteObject("Purple", "Rectangle"))
-        val binTriangle = JustAnotherObject("Bin", MyFavoriteObject("Blue", "Triangle"))
+        val fooSquare = FavoriteShape("Foo", FunShape("Red", "Square", 4))
+        val barCircle = FavoriteShape("Bar", FunShape("Orange", "Circle", 0))
+        val fizRectangle = FavoriteShape("Fiz", FunShape("Purple", "Rectangle", 4))
+        val binTriangle = FavoriteShape("Bin", FunShape("Blue", "Triangle", 3))
 
         val disposable3 =
                 Observable.just(fooSquare, barCircle, fizRectangle, binTriangle)
@@ -94,6 +95,15 @@ class JustFragment : Fragment() {
 
 
 // A class we can use for an example
-data class JustAnotherObject(var someProperty: String, var favoriteObject: MyFavoriteObject)
+data class FavoriteShape(var favoriteName: String, var funShape: FunShape)
 
-data class MyFavoriteObject(var myFavoriteColor: String, var favoriteShape: String)
+class FunShape(var color: String, var shape: String, val sides: Int) {
+    // Uncomment this to simulate the error condition
+//    override fun toString(): String {
+//        if (shape.startsWith("Circle")) {
+//            throw NotImplementedError("Circles are special, they don't have 'sides'.")
+//        } else {
+//            return "color: $color, shape: $shape, sides: $sides"
+//        }
+//    }
+}
