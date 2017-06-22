@@ -9,7 +9,6 @@ import android.widget.TextView
 import io.caster.rxexamples.R
 import io.reactivex.Observable
 import io.reactivex.disposables.CompositeDisposable
-import io.reactivex.observers.DisposableObserver
 import timber.log.Timber
 
 
