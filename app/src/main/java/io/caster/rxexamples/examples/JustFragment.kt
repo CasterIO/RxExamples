@@ -26,19 +26,13 @@ class JustFragment : Fragment() {
     override fun onActivityCreated(savedInstanceState: Bundle?) {
         super.onActivityCreated(savedInstanceState)
 
-        // With strings
+        // With Strings
         val disposable1 =
                 Observable.just("One Fish", "Two Fish", "Red Fish", "Blue Fish")
                         .subscribe({ item ->
                             // onNext
                             content.text = "${content.text}\n$item"
                             Timber.d("Item: $item, Time: ${System.currentTimeMillis()}")
-                        }, { ex ->
-                            // onError
-                            Timber.e(ex, ex.message)
-                        }, {
-                            // onComplete, all done!
-                            Timber.i("onComplete!")
                         })
 
         compositeDisposable.add(disposable1)
@@ -50,13 +44,8 @@ class JustFragment : Fragment() {
                             // onNext
                             content.text = "${content.text}\n$item"
                             Timber.d("Item: $item, Time: ${System.currentTimeMillis()}")
-                        }, { ex ->
-                            // onError
-                            Timber.e(ex, ex.message)
-                        }, {
-                            // onComplete, all done!
-                            Timber.i("onComplete!")
                         })
+
         compositeDisposable.add(disposable2)
 
         // With a complex object
@@ -77,32 +66,30 @@ class JustFragment : Fragment() {
                             // onError
                             Timber.e(ex, ex.message)
                         }, {
-                            // onComplete, all done!
-                            Timber.i("onComplete!")
+                            // onComplete
+                            Timber.i("onComplete")
                         })
 
         compositeDisposable.add(disposable3)
+
     }
 
     override fun onPause() {
         super.onPause()
-
+        // Clean up our disposables
         compositeDisposable.clear()
     }
 }
 
+data class FavoriteShape(val favoriteName: String, val funShape: FunShape)
 
-
-// A class we can use for an example
-data class FavoriteShape(var favoriteName: String, var funShape: FunShape)
-
-class FunShape(var color: String, var shape: String, val sides: Int) {
-    // Uncomment this to simulate the error condition
-//    override fun toString(): String {
-//        if (shape.startsWith("Circle")) {
-//            throw NotImplementedError("Circles are special, they don't have 'sides'.")
-//        } else {
-//            return "color: $color, shape: $shape, sides: $sides"
-//        }
-//    }
+class FunShape(val color: String, val shape: String, val sides: Int) {
+    override fun toString(): String {
+        if (shape.equals("Circle")) {
+            throw NotImplementedError("Circles are special, they don't have 'sides'.")
+        } else {
+            return "color: $color, shape: $shape, sides: $sides"
+        }
+    }
 }
+
