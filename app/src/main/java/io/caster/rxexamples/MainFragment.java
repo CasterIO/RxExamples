@@ -9,15 +9,15 @@ import android.view.ViewGroup;
 
 import butterknife.ButterKnife;
 import butterknife.OnClick;
-import io.caster.rxexamples.examples.AmbFragment;
-import io.caster.rxexamples.examples.AsyncSubjectFragment;
-import io.caster.rxexamples.examples.BehaviorSubjectFragment;
-import io.caster.rxexamples.examples.JustFragment;
-import io.caster.rxexamples.examples.RepeatFragment;
+import io.caster.rxexamples.examples.rxjava1.operators.AmbFragment;
+import io.caster.rxexamples.examples.rxjava1.subjects.AsyncSubjectFragment;
+import io.caster.rxexamples.examples.rxjava1.subjects.BehaviorSubjectFragment;
+import io.caster.rxexamples.examples.rxjava2.operators.JustFragment;
+import io.caster.rxexamples.examples.rxjava2.operators.RepeatFragment;
 import io.caster.rxexamples.examples.IntroFragment;
-import io.caster.rxexamples.examples.PublishSubjectFragment;
-import io.caster.rxexamples.examples.ReplaySubjectFragment;
-import io.caster.rxexamples.examples.ZipFragment;
+import io.caster.rxexamples.examples.rxjava1.subjects.PublishSubjectFragment;
+import io.caster.rxexamples.examples.rxjava1.subjects.ReplaySubjectFragment;
+import io.caster.rxexamples.examples.rxjava1.operators.ZipFragment;
 
 public class MainFragment extends Fragment {
 

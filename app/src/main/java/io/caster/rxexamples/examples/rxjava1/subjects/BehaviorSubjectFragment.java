@@ -1,4 +1,4 @@
-package io.caster.rxexamples.examples;
+package io.caster.rxexamples.examples.rxjava1.subjects;
 
 import android.os.Bundle;
 import android.support.annotation.Nullable;
@@ -14,7 +14,6 @@ import io.caster.rxexamples.R;
 import io.caster.rxexamples.models.Stock;
 import rx.Subscriber;
 import rx.Subscription;
-import rx.internal.operators.OnSubscribeRedo;
 import rx.subjects.BehaviorSubject;
 import rx.subscriptions.CompositeSubscription;
 import timber.log.Timber;

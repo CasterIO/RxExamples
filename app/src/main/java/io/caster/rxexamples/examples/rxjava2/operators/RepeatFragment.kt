@@ -1,4 +1,4 @@
-package io.caster.rxexamples.examples
+package io.caster.rxexamples.examples.rxjava2.operators
 
 
 import android.os.Bundle

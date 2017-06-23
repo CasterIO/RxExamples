@@ -1,4 +1,4 @@
-package io.caster.rxexamples.examples;
+package io.caster.rxexamples.examples.rxjava1.operators;
 
 import android.os.Bundle;
 import android.support.annotation.NonNull;

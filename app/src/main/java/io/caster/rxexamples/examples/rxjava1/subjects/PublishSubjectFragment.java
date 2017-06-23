@@ -1,4 +1,4 @@
-package io.caster.rxexamples.examples;
+package io.caster.rxexamples.examples.rxjava1.subjects;
 
 import android.os.Bundle;
 import android.support.annotation.Nullable;
