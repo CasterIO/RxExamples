@@ -1,5 +1,8 @@
 package io.caster.rxexamples.examples.rxjava2.operators
 
+import io.reactivex.Observable
+import timber.log.Timber
+
 
 class JustFragment : android.support.v4.app.Fragment() {
     var compositeDisposable: io.reactivex.disposables.CompositeDisposable = io.reactivex.disposables.CompositeDisposable()
@@ -17,24 +20,24 @@ class JustFragment : android.support.v4.app.Fragment() {
 
         // With Strings
         val disposable1 =
-                io.reactivex.Observable.just("One Fish", "Two Fish", "Red Fish", "Blue Fish")
+                Observable.just("One Fish", "Two Fish", "Red Fish", "Blue Fish")
                         .subscribe({ item ->
                             // onNext
                             content.text = "${content.text}\n$item"
-                            timber.log.Timber.d("Item: $item, Time: ${System.currentTimeMillis()}")
+                            Timber.d("Item: $item, Time: ${System.currentTimeMillis()}")
                         })
 
         compositeDisposable.add(disposable1)
 
         // With integers
+
         val disposable2 =
-                io.reactivex.Observable.just(1, 2, 3, 4)
+                Observable.just(1, 2, 3, 4)
                         .subscribe({ item ->
                             // onNext
                             content.text = "${content.text}\n$item"
-                            timber.log.Timber.d("Item: $item, Time: ${System.currentTimeMillis()}")
+                            Timber.d("Item: $item, Time: ${System.currentTimeMillis()}")
                         })
-
         compositeDisposable.add(disposable2)
 
         // With a complex object
@@ -44,22 +47,34 @@ class JustFragment : android.support.v4.app.Fragment() {
         val binTriangle = io.caster.rxexamples.examples.rxjava2.operators.FavoriteShape("Bin", FunShape("Blue", "Triangle", 3))
 
         val disposable3 =
-                io.reactivex.Observable.just(fooSquare, barCircle, fizRectangle, binTriangle)
+                Observable.just(fooSquare, barCircle, fizRectangle, binTriangle)
                         .subscribe({ item ->
                             // onNext
                             // .toString() is automatically called here, building the output
                             // you see on the screen.
                             content.text = "${content.text}\n$item"
-                            timber.log.Timber.d("Item: $item, Time: ${System.currentTimeMillis()}")
+                            Timber.d("Item: $item, Time: ${System.currentTimeMillis()}")
                         }, { ex ->
                             // onError
-                            timber.log.Timber.e(ex, ex.message)
+                            Timber.e(ex, ex.message)
                         }, {
                             // onComplete
-                            timber.log.Timber.i("onComplete")
+                            Timber.i("onComplete")
                         })
 
         compositeDisposable.add(disposable3)
+
+        // .just with a List
+        // listOf gives us an immutable List<T>
+        val listOfPrimitives = listOf("Sally", "Joe", "Juma", "Ritu")
+        var disposable4 = Observable.just(listOfPrimitives)
+                .subscribe({ item ->
+                    // onNext
+                    content.text = "${content.text}\n$item"
+                    Timber.d("Item: $item, Time: ${System.currentTimeMillis()}")
+                })
+
+        compositeDisposable.add(disposable4)
 
     }
 
