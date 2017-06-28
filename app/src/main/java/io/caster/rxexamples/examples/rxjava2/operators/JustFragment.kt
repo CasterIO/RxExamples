@@ -1,21 +1,29 @@
 package io.caster.rxexamples.examples.rxjava2.operators
 
+import android.os.Bundle
+import android.support.v4.app.Fragment
+import android.view.LayoutInflater
+import android.view.View
+import android.view.ViewGroup
+import android.widget.TextView
+import io.caster.rxexamples.R
 import io.reactivex.Observable
+import io.reactivex.disposables.CompositeDisposable
 import timber.log.Timber
 
 
-class JustFragment : android.support.v4.app.Fragment() {
-    var compositeDisposable: io.reactivex.disposables.CompositeDisposable = io.reactivex.disposables.CompositeDisposable()
+class JustFragment : Fragment() {
+    var compositeDisposable: CompositeDisposable = CompositeDisposable()
 
-    lateinit var content: android.widget.TextView
+    lateinit var content: TextView
 
-    override fun onCreateView(inflater: android.view.LayoutInflater, container: android.view.ViewGroup?, savedInstanceState: android.os.Bundle?): android.view.View? {
-        val view = inflater.inflate(io.caster.rxexamples.R.layout.fragment_just, container, false)
-        content = view.findViewById(io.caster.rxexamples.R.id.just_content) as android.widget.TextView
+    override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?): View? {
+        val view = inflater.inflate(R.layout.fragment_just, container, false)
+        content = view.findViewById(R.id.just_content) as TextView
         return view
     }
 
-    override fun onActivityCreated(savedInstanceState: android.os.Bundle?) {
+    override fun onActivityCreated(savedInstanceState: Bundle?) {
         super.onActivityCreated(savedInstanceState)
 
         // With Strings
@@ -41,10 +49,10 @@ class JustFragment : android.support.v4.app.Fragment() {
         compositeDisposable.add(disposable2)
 
         // With a complex object
-        val fooSquare = io.caster.rxexamples.examples.rxjava2.operators.FavoriteShape("Foo", FunShape("Red", "Square", 4))
-        val barCircle = io.caster.rxexamples.examples.rxjava2.operators.FavoriteShape("Bar", FunShape("Orange", "Circle", 0))
-        val fizRectangle = io.caster.rxexamples.examples.rxjava2.operators.FavoriteShape("Fiz", FunShape("Purple", "Rectangle", 4))
-        val binTriangle = io.caster.rxexamples.examples.rxjava2.operators.FavoriteShape("Bin", FunShape("Blue", "Triangle", 3))
+        val fooSquare = FavoriteShape("Foo", FunShape("Red", "Square", 4))
+        val barCircle = FavoriteShape("Bar", FunShape("Orange", "Circle", 0))
+        val fizRectangle = FavoriteShape("Fiz", FunShape("Purple", "Rectangle", 4))
+        val binTriangle = FavoriteShape("Bin", FunShape("Blue", "Triangle", 3))
 
         val disposable3 =
                 Observable.just(fooSquare, barCircle, fizRectangle, binTriangle)
@@ -85,7 +93,7 @@ class JustFragment : android.support.v4.app.Fragment() {
     }
 }
 
-data class FavoriteShape(val favoriteName: String, val funShape: io.caster.rxexamples.examples.rxjava2.operators.FunShape)
+data class FavoriteShape(val favoriteName: String, val funShape: FunShape)
 
 class FunShape(val color: String, val shape: String, val sides: Int) {
     override fun toString(): String {
