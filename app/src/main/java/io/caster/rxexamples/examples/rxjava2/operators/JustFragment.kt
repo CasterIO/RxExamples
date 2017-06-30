@@ -74,8 +74,9 @@ class JustFragment : Fragment() {
 
         // .just with a List
         // listOf gives us an immutable List<T>
-        val listOfPrimitives = listOf("Sally", "Joe", "Juma", "Ritu")
-        var disposable4 = Observable.just(listOfPrimitives)
+        val listOne = listOf(2, 4, 8, 16)
+        val listTwo = listOf(3, 6, 12, 24)
+        val disposable4 = Observable.just(listOne, listTwo)
                 .subscribe({ item ->
                     // onNext
                     content.text = "${content.text}\n$item"
