@@ -12,12 +12,14 @@ import butterknife.OnClick;
 import io.caster.rxexamples.examples.rxjava1.operators.AmbFragment;
 import io.caster.rxexamples.examples.rxjava1.subjects.AsyncSubjectFragment;
 import io.caster.rxexamples.examples.rxjava1.subjects.BehaviorSubjectFragment;
+import io.caster.rxexamples.examples.rxjava2.operators.DisposableFragment;
 import io.caster.rxexamples.examples.rxjava2.operators.JustFragment;
 import io.caster.rxexamples.examples.rxjava2.operators.RepeatFragment;
 import io.caster.rxexamples.examples.IntroFragment;
 import io.caster.rxexamples.examples.rxjava1.subjects.PublishSubjectFragment;
 import io.caster.rxexamples.examples.rxjava1.subjects.ReplaySubjectFragment;
 import io.caster.rxexamples.examples.rxjava1.operators.ZipFragment;
+import io.reactivex.subscribers.ResourceSubscriber;
 
 public class MainFragment extends Fragment {
 
@@ -39,6 +41,12 @@ public class MainFragment extends Fragment {
                 .replace(R.id.root_container, fragment)
                 .addToBackStack(null)
                 .commit();
+    }
+
+    @OnClick(R.id.disposable_fragment)
+    public void onDisposableClick() {
+        changeFragment(new DisposableFragment());
+
     }
 
     @OnClick(R.id.just_fragment)

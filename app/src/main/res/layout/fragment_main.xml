@@ -10,6 +10,12 @@
         android:id="@+id/main_content">
 
         <Button
+            android:id="@+id/disposable_fragment"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/disposable_example"/>
+
+        <Button
             android:id="@+id/intro_fragment"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"

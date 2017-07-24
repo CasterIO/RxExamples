@@ -22,4 +22,5 @@
     <string name="behavior_subject_existing_item">Creation Existing Item</string>
     <string name="repeat_example">Observable.repeat() Example</string>
     <string name="just_example">Observable.just() Example</string>
+    <string name="disposable_example">Disposable Example</string>
 </resources>
